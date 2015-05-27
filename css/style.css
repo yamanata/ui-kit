@@ -1,0 +1,235 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900&subset=latin,cyrillic);
+.area {
+  margin: 0 auto;
+  width: 1140px;
+}
+.row {
+  margin-left: -18px;
+  margin-right: -18px;
+}
+.col1 {
+  width: 8.33333333%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col2 {
+  width: 16.66666667%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col3 {
+  width: 25%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col4 {
+  width: 33.33333333%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col5 {
+  width: 41.66666667%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col6 {
+  width: 50%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col7 {
+  width: 58.33333333%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col8 {
+  width: 66.66666667%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col9 {
+  width: 75%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col10 {
+  width: 83.33333333%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col11 {
+  width: 91.66666667%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.col12 {
+  width: 100%;
+  padding: 0 18px;
+  box-sizing: border-box;
+  float: left;
+}
+.colbg {
+  height: 34px;
+}
+.colbg--blue {
+  background-color: #b9d0f9;
+}
+a {
+  color: darkorange;
+}
+a:hover {
+  text-decoration: none;
+}
+h1 {
+  font-size: 32px;
+  color: #333333;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 28px;
+  color: #333333;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 22px;
+  color: #333333;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h4 {
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+p {
+  font-size: 15px;
+  color: #333333;
+  line-height: 22pt;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+hr {
+  margin-bottom: 50px;
+}
+.btn {
+  width: 130px;
+  height: 35px;
+  line-height: 35px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #addf7a;
+  margin: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 0 #95cb5c;
+}
+.btn:hover {
+  background-color: #addf7a;
+  box-shadow: 0 3px 0 0 #95cb5c;
+}
+.btn:active {
+  background-color: #9cd066;
+  box-shadow: none;
+  box-sizing: content-box;
+  top: 3px;
+  position: relative;
+}
+.btn--small {
+  width: 90px;
+  height: 25px;
+  line-height: 25px;
+}
+.btn--grey {
+  background-color: #536167;
+  box-shadow: 0 3px 0 0 #3b4549;
+}
+.btn--grey:hover {
+  background-color: #677980;
+  box-shadow: 0 3px 0 0 #56656b;
+}
+.btn--grey:active {
+  background-color: #536167;
+  box-shadow: none;
+  box-sizing: content-box;
+}
+.btn--red {
+  background-color: #fc6e51;
+  box-shadow: 0 3px 0 0 #e3573b;
+}
+.btn--red:hover {
+  background-color: #fb7f65;
+  box-shadow: 0 3px 0 0 #ec694f;
+}
+.btn--red:active {
+  background-color: #fc6e51;
+  box-shadow: none;
+  box-sizing: content-box;
+}
+.pic {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 2;
+}
+.pic--loop:after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 258px;
+  height: 258px;
+  border-radius: 5px;
+  vertical-align: middle;
+  text-align: center;
+  background: url('../pict/zoom.png') no-repeat center center rgba(0, 0, 0, 0.5);
+}
+.pic--loop:hover:after {
+  display: block;
+  cursor: pointer;
+}
+.pic--bottom-title {
+  color: transparent;
+  cursor: none;
+  z-index: 0;
+}
+.pic:hover > .pic--bottom-title {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: .5s all;
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  background-color: #f0f2f5;
+}
+.inner {
+  width: 440px;
+}

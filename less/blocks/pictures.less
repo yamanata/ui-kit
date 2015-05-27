@@ -1,0 +1,42 @@
+.pic{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 2;
+
+    &--loop:after{
+      content:"";
+      display: none;
+      position: absolute;
+      top: 0;
+      width: 258px;
+      height: 258px;
+      border-radius: 5px;
+      vertical-align: middle;
+      text-align: center;
+      background: url('../pict/zoom.png') no-repeat center center rgba(0,0,0,.5);
+    }
+
+    &--loop:hover:after{
+    display: block;
+    cursor: pointer;
+  }
+
+
+   &--bottom-title{
+      color: transparent;
+      cursor: none;
+      z-index: 0;
+}
+  &:hover > &--bottom-title{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 20px;
+    background: rgba(0,0,0,.5);
+    transition: .5s all;
+    cursor: pointer;
+  }
+}
