@@ -2,7 +2,6 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
-  z-index: 2;
 
     &--loop:after{
       content:"";
@@ -22,21 +21,74 @@
     cursor: pointer;
   }
 
-
-   &--bottom-title{
-      color: transparent;
-      cursor: none;
-      z-index: 0;
+     &--loop:active{
+    width: 258px;
+    height: 258px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
 }
-  &:hover > &--bottom-title{
-    position: absolute;
+
+.slide-up{
+  width: 258px;
+  height: 258px;
+  position: relative;
+  overflow: hidden;
+  a{
+    text-decoration: none;
+    text-align: center;
+  }
+  &:hover .slide-text{
     bottom: 0;
+    border-radius: 5px;
+  }
+}
+.slide-text{
+  transition: 0.9s;
+  position: absolute;
+  bottom: -100px;
+  background: rgba(0, 0, 0, 0.5);
+  p {
     color: #fff;
+    padding: 10px 10px 5px;
     font-size: 14px;
     line-height: 20px;
-    padding: 20px;
-    background: rgba(0,0,0,.5);
-    transition: .5s all;
-    cursor: pointer;
+    background-color: transparent;
   }
+}
+
+.double-side{
+  width: 258px;
+  height: 258px;
+  &:hover .double-block {
+    transform: rotateY(180deg);
+  }
+}
+.double-front, .double-side__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+.double-block {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.double-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.double-side__text {
+  transform: rotateY(180deg);
+  padding-top: 100px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  & p{
+    background-color: #fff;
+    height: 117px;
+  }
+  
 }
