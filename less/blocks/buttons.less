@@ -1,64 +1,61 @@
 .btn{
-    width: 130px;
-    height: 35px;
-    line-height: 35px;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    background-color: #a0d468;
-    margin: 5px 10px;
-    font-size: 14px;
-    border-radius: 5px;
-    box-shadow: 0 3px 0 0 #95cb5c;
+	color:@btn-color;
+	min-height:20px;
+	display:inline-block;
+	text-align:center;
+	text-decoration:none;
+	margin:10px auto;
+	vertical-align:top;
+	border-bottom:@btn-border-width solid @btn-default-border;
+	border-radius:@border-radius-small;
 
-    &:hover{
-    background-color: #addf7a;
-    box-shadow: 0 3px 0 0 #95cb5c;
-  } 
+	a&:hover{
+		color:@btn-color;
+	}
 
-  &:active{
-    background-color: #9cd066;
-    box-shadow: none;   
-    box-sizing: content-box;
-    top: 3px;
-    position: relative;
-  }
+	&--large{
+		padding:5px 10px;
+		font-size:@font-size-large;
+		min-width:80px;
+		line-height:@font-size-large;
+	}
 
-  &--small{
-    width: 90px;
-    height: 25px;
-    line-height: 25px;
-  }
+	&--small{
+		padding:2px 5px;
+		font-size:@font-size-small;
+		min-width:70px;
+	}
 
-  &--grey{
-    background-color: #536167;
-    box-shadow: 0 3px 0 0 #3b4549;
+	&-default{
+		.btn--modificator(@btn-default;@btn-default-border;@btn-default-hover;@btn-default-hover-border;@btn-default-onclick);
+	}
 
-    &:hover{
-      background-color: #677980;
-      box-shadow: 0 3px 0 0 #56656b;      
-    }
-    &:active{
-      background-color: #536167;
-      box-shadow: none;   
-      box-sizing: content-box;      
-    }
-  }
+	&-info{
+		.btn--modificator(@btn-info;@btn-info-border;@btn-info-hover;@btn-info-hover-border;@btn-info-onclick);
+	}
+	
+	&-error{
+		.btn--modificator(@btn-error;@btn-error-border;@btn-error-hover;@btn-error-hover-border;@btn-error-onclick);
+	}
 
-  &--red{
-    background-color: #fc6e51;
-    box-shadow: 0 3px 0 0 #e3573b;
+	}
 
-    &:hover{
-      background-color: #fb7f65;
-      box-shadow: 0 3px 0 0 #ec694f;      
-    }
-    &:active{
-      background-color: #fc6e51;
-      box-shadow: none;   
-      box-sizing: content-box;      
-    }
-  }
-}
+	.btn--modificator(@btn-bg;@btn-border;@btn-hover;@btn-hover-border;@btn-onclick){
+		background-color:@btn-bg;
+		
+		
+		border-color:@btn-border;
+
+		&:hover, &__hover{
+			background-color:@btn-hover;
+			border-bottom-color:@btn-hover-border;
+		}
+
+		&:active, &__onclick{
+			background-color:@btn-onclick;
+			border:0px;
+			position:relative;
+			top:@btn-border-width;
+		}
+	}
 
