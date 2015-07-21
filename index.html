@@ -3,12 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <title>UI kit</title>
-   <link rel="stylesheet" href="css/style.css">
+	<link href="css/select2.min.css" rel="stylesheet" />
+	<link href="css/jquery-ui.css" rel="stylesheet" />
+	<link href="css/jquery-ui.theme.css" rel="stylesheet" />
+	<link rel="stylesheet" href="app/owl-carousel/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="app/owl-carousel/owl-carousel/owl.theme.css">
+	<link rel="stylesheet" href="css/style.css">
+   
+
 </head>
 <body>
 
   
-  <script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+ 	<!--<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>-->
+ 	<script src="scripts/jquery-2.1.4.min.js"></script>
+	<script src="scripts/tab.js"></script>
+	<script src="scripts/nav.js"></script>
+	<script src="scripts/formpro.js"></script>
+	<!-- Important Owl stylesheet -->
+	
+ 
+	<!-- Default Theme -->
+	
+ 
+	<!-- Include js plugin -->
+	<script src="app/owl-carousel/owl-carousel/owl.carousel.js"></script>
+	<script src="scripts/select2.min.js"></script>
+	<script src="scripts/jquery-ui.js"></script>
+	<script src="scripts/jRate.min.js"></script>
+	
+
+
+
+	<!--Call the plagin owl-carousel, select2-->
+	<script>
+		$(document).ready(function() {
+  			$("#owl-example").owlCarousel({
+  				navigation : false, // Hidden next and prev buttons
+      			slideSpeed : 300,
+      			paginationSpeed : 400,
+      			singleItem:true
+  			});
+
+  			$(".js-example-basic-single").select2({
+  				minimumResultsForSearch: Infinity
+  			});
+  			$(".js-example-basic-multiple").select2();
+
+		});
+	</script>
+
+	<script>
+  		$(function() {
+    		$( "#slider-range" ).slider({
+      			range: true,
+      			min: 0,
+      			max: 100,
+      			values: [ 30, 60 ],
+      			slide: function( event, ui ) {
+        			$( "#amount" ).val(  ui.values[ 0 ] + " Р - " + ui.values[ 1 ]  + " Р ");
+      				}
+    			});
+
+    		$( "#amount" ).val($( "#slider-range" ).slider( "values", 0 ) + " Р" +
+      " - " + $( "#slider-range" ).slider( "values", 1 ) 	+ " Р");
+  			});
+
+  		 $(function() {
+    		$( "#progressbar" ).progressbar({
+      			value: 40 
+    		});
+  		});
+
+  		$(function() {
+    		$( "#radio" ).buttonset();
+  		});
+  		$(function() {$("#jRate").jRate({
+		  startColor: "yellow",
+		  endColor: "yellow"
+		});
+
+		 $(function() {
+    		$( "#slider" ).slider({
+      		value:100,
+      		min: 0,
+      		max: 500,
+      		step: 50,
+      		slide: function( event, ui ) {
+        	$( "#amount-1" ).val( "$" + ui.value );
+      		}
+    		});
+    		$( "#amount-1" ).val( "$" + $( "#slider" ).slider( "value" ) );
+  		});
+		$(function() {
+		    $( "#slider-range-max" ).slider({
+		      range: "max",
+		      min: 1,
+		      max: 3,
+		      value: 1,
+		      slide: function( event, ui ) {
+		        $( "#amount-max" ).val( ui.value );
+		      }
+		    });
+		    $( "#amount-max" ).val( $( "#slider-range-max" ).slider( "value" ) );
+		  });
+
+
+  	});
+
+  		
+	</script>
+
+	
+
+
+
 	<div class="container-md">
 		<h1>UI kit</h1>
 		 <section>
@@ -93,35 +202,35 @@
 		<section>
 			<h1 class="section-title">Картинки</h1>
 			<div class="row">
-				<div class="row">
 					<div class="col-3">
-							<img src="pict/image-example.png" alt=""  class = "picture">
+						<div  class = "picture picture--border-radius"><img src="pict/image-example.png" alt=""></div>
 					</div>
 					<div class="col-3">
-							<img src="pict/image-example.png" alt=""  class = "picture picture--filter-opacity">
+							<div  class = "picture picture--border-radiu picture--filter-opacity picture__zoom">
+								<img src="pict/image-example.png" alt=""  class = "">
+							</div>
 					</div>
 					<div class="col-3">
-						<div class = "picture-transform">
-							<img src="pict/image-example.png" alt="" class = "picture">
-							<div class="picture-transform__details">
+						<div class = "picture picture--transform  picture--border-radiu">
+							<img src="pict/image-example.png" alt="">
+							<div class="picture--transform__details">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, repudiandae!
 							</div>
 						</div>
 					</div>
 
 					<div class="col-3">
-						<div class = "card-container">
+						<div id = "card-container">
 							<div id="card">
-								<figure class="front face">
-									<img src="pict/image-example.png" alt="" class = "picture">
-								</figure>
-								<figure class  = "back face">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nam ducimus aut, dolorum tenetur aliquid!</p>
-								</figure>
+								<div class="front face picture  picture--border-radiu">
+									<img src="pict/image-example.png" alt="" >
+								</div>
+								<div class  = "back face center">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque nam ducimus aut, dolorum tenetur aliquid!
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 			</div>
 		</section>
 
@@ -129,33 +238,249 @@
 			<h1 class="section-title">Интерактив</h1>
 			<div class="row">
 				<div class="col-6">
-					
+					<div id="owl-example" class="owl-carousel">
+						<div class = "picture"><img src="pict/carousel.png" alt=""></div>
+						<div class = "picture"><img src="pict/carousel.png" alt=""></div>
+						<div class = "picture"><img src="pict/carousel.png" alt=""></div>
+					</div>
 				</div>
 				<div class="col-6">
-					<div class="tooltip-layout">
-						<p>Lorem ipsum dolor.</p>
-						<div class="tooltip-text">
-							Lorem ipsum dolor sit amet.
-							<div class="triangle-down"></div>
+					<div class = "example-block">
+						<div class="tooltip-layout">
+							<p>Любить, значить страдать.</p>
+							<div class="tooltip-text">
+								Положение сложное, Соня.
+								<div class="triangle-down"></div>
+							</div>
+						</div>
+					</div>	
+					<div class="example-block">
+						<div class = "tab">
+							<ul class="tab__titles">
+								<li class="tab__title tab__title--active"><a href="#tab_01">Таб 1</a></li>
+								<li class="tab__title"><a href="#tab_02">Таб 2</a></li>
+								<li class="tab__title"><a href="#tab_03">Таб 3</a></li>
+								<li class="tab__title"><a href="#tab_04">Таб 4</a></li>
+							</ul>
+
+							<div class="tab__contents">
+								<div class="tab__content tab__content--active" id = "tab_01">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, temporibus nihil molestias. Numquam ipsa consectetur quidem voluptatem, reiciendis, perferendis dolores asperiores aliquid, ipsum unde quae qui facilis temporibus hic doloribus.</div>
+								<div class="tab__content" id = "tab_02">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque tenetur obcaecati vel aliquam, odio accusamus facilis, quo quasi molestias pariatur earum provident ipsa nostrum quod deleniti reiciendis eaque quaerat ea.</div>
+								<div class="tab__content" id = "tab_03">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A debitis praesentium animi vero reprehenderit ratione dolorem mollitia sint deserunt, voluptas nobis. Nihil excepturi, ea praesentium maiores omnis aliquam quisquam consectetur!</div>
+								<div class="tab__content" id = "tab_04">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium at, sint natus nisi quod, corporis voluptas qui dolore quidem beatae hic enim similique dignissimos laudantium, labore, molestias ipsa! Tempore, temporibus!</div>
+							</div>
 						</div>
 					</div>
-					<nav>
-						
-					</nav>
 				</div>
 			</div>
 		</section>
 
 		<section>
-			<h1 class="section title">Формы</h1>
-			<div class="col-4">
-				<form action=""></form>
+			<h1 class="section-title">Формы</h1>
+			<div class="row">
+				<div class="col-4">
+					<div class="example-block">
+						<form action="">
+							<input type="text" placeholder = "Полковнику никто не пишет" class = "input-field">
+							<input type="text" class = "input-field input--focus" value = "Пишет">
+							<input type="text" class = "input-field input--error" value = "Но не то" pattern = [0-9]{3}-[0-9]{5}>
+							<input type="text" class = "input-field input--success" value = "А, нет, все правильно">
+						</form>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="example-block">
+						<form action="">
+							<select class="js-example-basic-multiple select-multiple" multiple="multiple">
+  								<option value="AL">Быстрее</option>
+  								<option value="WY">Выше</option>
+  								<option value="WY">Сильнее</option>
+							</select>
+            			</form>
+					</div>
+					<div class="example-block">
+						<form action="">
+							<select class="js-example-basic-single select-basic">
+  								<option value="AL">Выпадающий список</option>
+  								<option value="WY">Первый пункт списка</option>
+  								<option value="WY">Пункт при наведении</option>
+  								<option value="WY">Еще пункт</option>
+							</select>
+						</form>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="example-block">
+						<form action="">
+							<div class = "inline-block">
+	                			<div class = "new-radio">
+	                    			<input type="radio" name="answer" id="answer1" disabled>
+	                    			<label for="answer1" class = "new-radio__label" >Неактивно</label>
+	                			</div>
+	                			<div class = "new-radio">
+	                   				 <input type="radio" name="answer" id="answer2">
+	                    			<label for="answer2" class = "new-radio__label">Активно</label>
+	                			</div>
+	                			<div class = "new-radio">
+	                    			<input type="radio" name="answer" id="answer3">
+	                    			<label for="answer3" class = "new-radio__label">Отмечено</label>
+	                			</div>
+	                		</div>
+	                		<div class = "inline-block">
+	                			<div class = "new-checkbox">
+	                    			<input type="checkbox" id="answer4" class = ""  disabled>
+	                    			<label for="answer4" class = "new-checkbox__label">Неактивно</label>
+	               				 </div>
+	               				 <div class = "new-checkbox">
+	                    			<input type="checkbox" id="answer5">
+	                    			<label for="answer5" class = "new-checkbox__label">Активно</label>
+	                    		</div>
+	                			<div class = "new-checkbox">
+	                    			<input type="checkbox" id="answer6">
+	                    			<label for="answer6" class = "new-checkbox__label">Отмечено</label>
+	                			</div>
+	                		</div>
+            			</form>
+
+						<form action="">
+							<div class = "on-off-radio">
+								<label class="form-field">
+		    						<input type="checkbox" class = "default"/>
+		    							<span class="text">
+		      								<span class="on">Включено</span>
+		      								<span class="dn">/</span>
+		      								<span class="off">Выключено</span>
+		    							</span>
+		  						</label>
+		  					</div>
+		  					<div class = "on-off-radio">
+								<label class="form-field">
+		    						<input type="checkbox" />
+		    							<span class="text">
+		      								<span class="on">Включено</span>
+		      								<span class="dn">/</span>
+		      								<span class="off">Выключено</span>
+		    							</span>
+		  						</label>
+		  					</div>
+		  					<div class = "on-off-radio">
+		  						<label class="form-field">
+		    						<input type="checkbox" checked/>
+		    							<span class="text">
+		      								<span class="on">Включено</span>
+		      								<span class="dn">/</span>
+		      								<span class="off">Выключено</span>
+		    							</span>
+		  						</label>
+		  					</div>
+						</form>
+
+						 
+					</div>
+				</div>
 			</div>
-			<div class="col-4">
-				<form action=""></form>
+		</section>
+
+
+		<section>
+			<h1 class="section-title">Продвинутые формы</h1>
+			<div class="row">	
+				<div class="col-6">
+					<!--<div class="example-block">
+						
+						<div id="slider-range-max">
+							<div class = "slider-range-max__titles">
+								<div class="slider-range-max__title">Шаг 1</div>
+								<div class="slider-range-max__title">Шаг 2</div>
+								<div class="slider-range-max__title">Шаг 3</div>
+							</div>
+						</div>
+					</div>-->
+
+					<div class="example-block">
+						<div class="step">
+							<div class="step__item step__item--active">
+								<h4 class = "step__title">Шаг 1</h4>
+							</div>
+							<div class="step__item step__item--active-before">
+								<h4 class = "step__title">Шаг 2</h4>
+							</div>
+							<div class="step__item">
+								<h4 class = "step__title">Шаг 3</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="example-block">
+						<!-- Slider -->
+						<p>
+  							<label for="amount" class = "ui-slider--label"></label>
+  							<input type="text" id="amount" readonly style="border:0; color:#000;margin:auto;">
+						</p>
+ 
+						<div id="slider-range"></div>
+					</div>
+				</div>
 			</div>
-			<div class="col-4">
-				<form action=""></form>
+			<div class="row">
+				<div class="col-4">
+					<div class="example-block">
+						<div id="progressbar"></div>
+					</div>
+				</div>
+
+				<div class="col-4">
+					<div class="example-block">
+						<form action="">
+  							<input type="radio" id = "radio1" class = "switch" name = "switch" checked/>
+  							<label for="radio1" class = "switch--label"></label>
+  							<input type="radio" id = "radio2"  class = "switch" name = "switch"/>
+  							<label for="radio2" class = "switch--label"></label>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h1 class="section-title">
+				Дополнительно
+			</h1>
+			<div class="row">
+				<div class="col-4">
+					<div class="example-block">
+						<nav>
+							<h3 class =  "nav__title">Входящие сообщения</h3>
+							<ul class = "nav1">
+								<li class = "nav1__item img-new"><a href='#__JSNotWork'>Новые</a><span class="label label__error label--float">32</span></li>
+								<li class = "nav1__item  img-star"><a class = '#__JSNotWork'>Важные</a><span class="label label__error label--float">6</span></li>
+								<li class = "nav1__item  img-work">
+									<!--<div id="accordion">-->
+									<a href = '#__JSNotWork'>Работа<span class="label label__error label--float">4</span></a>
+										<ul class = "nav2">
+											<li class = "nav2__item"><a href="">Забота</a><span class="label label__default label--float">1</span></li>
+											<li  class = "nav2__item"><a href="">Зевота</a><span class="label label__default label--float">2</span></li>
+										</ul>
+								<!--</div>-->
+								</li>
+								<li class = "nav1__item img-spam"><a href='#__JSNotWork'>Спам</a></li>
+							</ul>
+							<div class = "nav__link--margin"><a href="">Показать все</a></div>
+						</nav>
+					</div>
+				</div>
+				<div class="col-8">
+					<div class="example-block">
+						<ol class="breadcrumb">
+						  <li class = "breadcrumb--item"><a href="#">Чем дальше в лес</a></li>
+						  <li class = "breadcrumb--item"><a href="#">Тем больше</a></li>
+						  <li class="active breadcrumb--item">Дров</li>
+						</ol>
+					</div>
+					<div class="example-block">
+						<div id="jRate"></div>
+					</div>
+				</div>
 			</div>
 		</section>
 

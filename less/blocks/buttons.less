@@ -1,29 +1,27 @@
 .btn{
 	color:@btn-color;
-	min-height:20px;
 	display:inline-block;
 	text-align:center;
 	text-decoration:none;
 	margin:10px auto;
 	vertical-align:top;
 	border-bottom:@btn-border-width solid @btn-default-border;
-	border-radius:@border-radius-small;
+	border-radius:@border-radius-large;
 
 	a&:hover{
 		color:@btn-color;
 	}
 
 	&--large{
-		padding:5px 10px;
-		font-size:@font-size-large;
-		min-width:80px;
-		line-height:@font-size-large;
+		padding:7px 10px;
+		font-size:@font-size-base;
+		min-width:120px;
 	}
 
 	&--small{
-		padding:2px 5px;
+		padding:5px 5px;
 		font-size:@font-size-small;
-		min-width:70px;
+		min-width:100px;
 	}
 
 	&-default{
@@ -36,6 +34,10 @@
 	
 	&-error{
 		.btn--modificator(@btn-error;@btn-error-border;@btn-error-hover;@btn-error-hover-border;@btn-error-onclick);
+	}
+
+	& + &{
+		margin-left:10px;
 	}
 
 	}
@@ -57,5 +59,7 @@
 			position:relative;
 			top:@btn-border-width;
 		}
+
+		
 	}
 

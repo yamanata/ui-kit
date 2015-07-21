@@ -3,18 +3,19 @@
 	display:inline-block;
 
 	.tooltip-text{
-		padding:7px 10px;
-		color:#fff;
+		padding:@tooltip-padding;
+		color:@tooltip-color;
 		position:absolute;
 		left:50%;
 		width:200px;
 		opacity:0;
-		background-color:#FC6E51;
-		border-radius:5px;
+		background-color:@tooltip-bg;
+		border-radius:@tooltip-border-radius;
 		top:100%;
 		box-sizing:border-box;
 		margin-left:-100px;
 		text-align:center;
+		font-size:@font-size-small;
 	}
 
 	&:hover .tooltip-text{
@@ -25,13 +26,13 @@
 	.triangle-down {
    		width: 0;
     	height: 0;
-    	border-left: 10px solid transparent;
-    	border-right: 10px solid transparent;
-    	border-bottom: 10px solid #FC6E51;
+    	border-left: @tooltip-arrow-width solid transparent;
+    	border-right: @tooltip-arrow-width solid transparent;
+    	border-bottom: @tooltip-arrow-width solid #FC6E51;
     	position:absolute;
-    	top:-10px;
+    	top:-@tooltip-arrow-width;
     	left:50%;
-    	margin-left:-5px;
+    	margin-left:-@tooltip-arrow-width/2;
     	box-sizing:border-box;
 	}
 }

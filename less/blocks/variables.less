@@ -19,26 +19,27 @@
 //** Background color for `<body>`.
 @body-bg:               #fff;
 //** Global text color on `<body>`.
-@text-color:            @gray-dark;
+@text-color:            @gray-darker;
 
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif: "Roboto", sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-base:        @font-family-sans-serif;
+
 
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
 
-@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
-@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
-@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
-@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
-@font-size-h5:            @font-size-base;
-@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+@font-size-h1:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h2:            floor((@font-size-base * 1.7)); // ~24px
+@font-size-h3:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            ceil((@font-size-base * 0.85)); // ~12px
+@font-size-h4:            @font-size-base;
+
 
 //** Unit-less `line-height` for use in components like buttons.
 @line-height-base:        1.428571429; // 20/14
@@ -118,3 +119,73 @@
 //** Default text color of a linked label
 @label-link-hover-color:      	#fb765b;
 @label-link-color:				#fb765b;
+
+//== Tooltips
+//
+//##
+
+//** Tooltip max width
+@tooltip-max-width:				200px;
+//** Tooltip text color
+@tooltip-color:					#fff;
+//** Tooltip background color
+@tooltip-bg:					#FC6E51;
+@tooltip-opacity:				.9;
+@tooltip-padding:				@space;
+@tooltip-border-radius:			@border-radius-large;
+
+
+//** Tooltip arrow width
+@tooltip-arrow-width:         	5px;
+//** Tooltip arrow color
+@tooltip-arrow-color:         	@tooltip-bg;
+
+//== Tabs
+//**Padding, margin space step
+@space:							6px;
+
+//== Tabs
+//** Tab color
+@tab-color:						#000;
+@tab-color-active:				#fff;
+@tab-bg:						#fff;
+@tab-bg-active:					#FC6E51;
+
+//** Tab margin, padding, radius
+@tab-margin:					@space;
+@tab-border-radius:				@border-radius-base;
+
+//== Forms
+//** Check box
+
+@decorate-color:				#fc6e51;
+
+@check-box-bg:					#ddd;
+@check-box-bg-checked:			#addf7a;
+@check-box-bg-dote:				#fff;
+
+//** Radio buttons
+
+@radio-color:					#c8c8c8;
+@radio-active-color:			@decorate-color;
+
+//** Input
+
+@input-border-width: 			1px;
+@input-border-color:			#eaeaea;
+@input-border-focus-color:		#797979;
+@input-border-error-color:		#f2adad;
+@input-border-success-color:	#c0e896;
+@input-placeholder-color:		#eaeaea;
+@input-color:					#797979;
+
+//** Select
+
+@select-width:					250px;
+
+//** Labels
+
+@label-default:					#fff;
+@label-warining:				#fff;
+@label-error:					#f29393;
+@label-color:					#fff;

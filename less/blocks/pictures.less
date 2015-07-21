@@ -1,21 +1,57 @@
 .picture{
+	overflow:hidden;
+
+	&--border-radius{
+		border-radius:@border-radius-large;
+	}
+
+	img{
+		width:100%;
+		vertical-align:bottom;
+	}
+
 	&--filter-opacity:hover{
+		background-color:#000;
+		border-radius:@border-radius-large;
+	}	
+
+	&--filter-opacity:hover img{
 		opacity:0.5;
 		transition-duration: 0.5s;
 	}
 
-img&{
-		width:100%;
-		vertical-align:bottom;
+	&__zoom{
+		position:relative;
 	}
+
+	&__zoom:after{
+		position:absolute;
+		width:50px;
+		height:50px;
+		//background-color:white;
+		content:"";
+		top:0px;
+		bottom:0px;
+		margin: auto;
+		left:0px;
+		right:0px;
+		background-image:url("../pict/icon/search.svg");
+		opacity:0;
+	}
+
+	&__zoom:hover:after{
+		opacity:1;
+		transition-duration: 0.5s;
+	}
+
 }
 
+//*Картинка с выдвигающимся блоком
 
-
-.picture-transform{
+.picture--transform{
 	position:relative;
 	overflow:hidden;
-	border-radius:5px;
+	border-radius:@border-radius-base;
 
 
 	&:hover &__details{
@@ -40,84 +76,44 @@ img&{
 }
 
 
+//*Картинка с поворотом
 
-.card-rotate{
-	&__container{
-		 position: relative;
-		 z-index: 1;
-		 perspective: 1000;
-		 margin: 10px auto;
-	}
-
-	 &__layout{
-	 	transform-style: preserve-3d;
-  		transition: all 1.0s linear;
-  		width: 100%;
-  		height: 100%;
-	 }
-
-	 &:hover &__layout{
-	 	transform: rotateY(180deg);
-	 }
-
-	  &__img{
-	 	position: absolute;
-	 	width: 100%;
-  		height: 100%;
-  		backface-visibility: hidden;
-	 }
-
-	 face{
-	  	position: absolute;
-  		width: 100%;
-  		height: 100%;
-  		backface-visibility: hidden;
-	}
-
-	 .face.back {
-		display: block;
-		transform: rotateY(180deg);
-		box-sizing: border-box;
-		padding: 10px;
-		color: white;
-		text-align: center;
-		background-color: #aaa;
-	}
-}
-
-
-.card-container { 
-  width: 200px;
-  height: 260px;
+#card-container {
   position: relative;
-  perspective: 800px;
-}
+  height:216px;
+  width:100%;
+  z-index: 1;
+  perspective: 1000;
 
-#card {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	transform-style: preserve-3d;
-	transition: transform 1s;
-
-	figure {
-		display: block;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		backface-visibility: hidden;
+	#card {
+	  width: 100%;
+	  height:100%;
+	  transform-style: preserve-3d;
+	  transition: all 1.0s linear;	  
 	}
 
-	.front {
-		background: red;
-	}
-
-	.back {
-		transform: rotateY( 180deg );
-	}
-
-	&.flipped {
-  		transform: rotateY( 180deg );
+	&:hover #card{
+	  transform: rotateY(180deg);
 	}
 }
 
+.face {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  backface-visibility: hidden;
+
+	&.back {
+	  display: table-cell;
+	  transform: rotateY(180deg);
+	  box-sizing: border-box;
+	  padding: 10px;
+	  //color: white;
+	  text-align: center;
+	  //background-color: #aaa;
+	  border-radius:@border-radius-small;
+	  border:1px solid @gray-light;
+	  margin:auto;
+	  vertical-align:middle;
+	}
+}
