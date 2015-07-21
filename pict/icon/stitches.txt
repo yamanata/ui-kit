@@ -1,0 +1,78 @@
+<i class="sprite sprite-form2"></i>
+<i class="sprite sprite-forma1"></i>
+<i class="sprite sprite-forma11"></i>
+<i class="sprite sprite-forma3-1"></i>
+<i class="sprite sprite-forma4"></i>
+<i class="sprite sprite-forma5"></i>
+<i class="sprite sprite-forma6"></i>
+<i class="sprite sprite-forma7"></i>
+<i class="sprite sprite-forma8"></i>
+<i class="sprite sprite-forma9"></i>
+<i class="sprite sprite-magnifier"></i>
+<i class="sprite sprite-polygon1"></i>
+<i class="sprite sprite-rectangle2"></i>
+
+
+
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.sprite {
+    background-image: url(spritesheet.png);    background-repeat: no-repeat;
+    display: block;
+
+    &.sprite-form2 {
+        .stitches-sprite(-5px, -5px, 15px, 12px);
+    }
+
+    &.sprite-forma1 {
+        .stitches-sprite(-30px, -5px, 8px, 7px);
+    }
+
+    &.sprite-forma11 {
+        .stitches-sprite(-48px, -5px, 12px, 12px);
+    }
+
+    &.sprite-forma3-1 {
+        .stitches-sprite(-70px, -5px, 15px, 15px);
+    }
+
+    &.sprite-forma4 {
+        .stitches-sprite(-95px, -5px, 15px, 15px);
+    }
+
+    &.sprite-forma5 {
+        .stitches-sprite(-120px, -5px, 14px, 14px);
+    }
+
+    &.sprite-forma6 {
+        .stitches-sprite(-144px, -5px, 11px, 14px);
+    }
+
+    &.sprite-forma7 {
+        .stitches-sprite(-165px, -5px, 17px, 15px);
+    }
+
+    &.sprite-forma8 {
+        .stitches-sprite(-192px, -5px, 11px, 13px);
+    }
+
+    &.sprite-forma9 {
+        .stitches-sprite(-213px, -5px, 15px, 10px);
+    }
+
+    &.sprite-magnifier {
+        .stitches-sprite(-238px, -5px, 35px, 36px);
+    }
+
+    &.sprite-polygon1 {
+        .stitches-sprite(-283px, -5px, 12px, 10px);
+    }
+
+    &.sprite-rectangle2 {
+        .stitches-sprite(-305px, -5px, 9px, 9px);
+    }
+}

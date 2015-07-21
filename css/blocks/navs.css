@@ -1,0 +1,6 @@
+.nav2 {
+  display: none;
+}
+.nav--active {
+  display: block;
+}

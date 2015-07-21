@@ -1,0 +1,6 @@
+.breadcrumb {
+  list-style: none;
+}
+.breadcrumb--item {
+  display: inline;
+}

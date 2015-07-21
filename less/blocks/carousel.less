@@ -1,0 +1,28 @@
+.owl-theme .owl-controls .owl-page span{
+	background-color:@decorate-color;
+}
+
+.owl-theme .owl-controls .owl-page{
+	position:relative;
+
+	&:first-child:before, &:last-child:before{
+		content:"";
+		width:8px;
+		height:8px;
+		position:absolute;
+		border-top:2px solid @decorate-color;
+		border-right:2px solid @decorate-color;
+		top:6px;
+	}
+
+	&:first-child:before{
+		transform: rotate(-135deg);
+		left:-20px;
+	}
+
+	&:last-child:before{
+		transform: rotate(45deg);
+		left:34px;
+	}
+
+}

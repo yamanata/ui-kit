@@ -1,0 +1,6 @@
+.label-default,
+.label-warning,
+.label-error {
+  padding: 3px 5px;
+  display: inline-block;
+}

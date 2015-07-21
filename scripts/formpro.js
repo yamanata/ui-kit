@@ -1,0 +1,10 @@
+$(document).ready(function(){
+	$('.step__item').on('click',function(){
+		$(this).addClass("step__item--active-before");
+		$(this).removeClass("step__item--active");
+		$(this).prevAll('.step__item').addClass("step__item--active");
+		$(this).nextAll('.step__item').removeClass("step__item--active");
+		$(this).nextAll('.step__item').removeClass("step__item--active-before");
+		$(this).prevAll('.step__item').removeClass("step__item--active-before");
+	});
+});
